@@ -33,7 +33,7 @@ export default {
       }
       if(this.limit){
         path = [path, params].join('?');
-      };
+      }
 
       axios.get(path)
       .then(
