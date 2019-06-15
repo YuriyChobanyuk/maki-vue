@@ -1,0 +1,31 @@
+.header.m-b-90
+  .header__top
+    .wrapper
+      .row.justify-between
+        include top-nav
+        include header-search
+  .header__mid
+    .wrapper
+      .row
+        .column-laptop-1-4
+          include main-logo
+        .column-phablet-1-1.column-tablet-1-1.column-laptop-1-2.t-center
+          include header-contact
+        .column-laptop-1-4
+          a(href="#").cart-button.m-t-30
+            i.sprite-icon-cart.sprite
+            |КОРЗИНА
+
+          .headertext  
+            span 
+              strong#counter 0 
+              | товаров
+            span на сумму 
+              strong#price 1000 
+              | руб.
+
+  .header__bottom
+    .wrapper
+      .menu-card
+        include menu-card
+include menu-opener

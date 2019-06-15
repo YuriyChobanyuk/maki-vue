@@ -1,0 +1,97 @@
+%product-text
+  color: #333333
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  align-items: center
+  font-size: 18px
+
+.product
+  padding-bottom: 25px
+
+  &__labels
+    position: absolute
+    top: 0
+    left: 0
+    display: flex
+    flex-wrap: wrap
+
+  &__link
+    text-decoration: none
+    display: flex
+    align-items: center
+    flex-direction: column
+    margin-bottom: 10px
+
+  &__image
+    padding: 10px
+    margin-bottom: 10px
+    height: 220px
+    display: flex
+    align-items: center
+
+    img
+      max-width: 100%
+      object-fit: cover
+
+
+  &__description
+    @extend %product-text
+    display: flex
+    flex-wrap: wrap
+    text-align: center
+    padding: 0 20px
+    padding-bottom: 5px
+    height: 2rem
+    overflow: hidden
+
+  &__price
+    @extend %product-text
+    font-weight: 600
+    margin-top: auto
+    line-height: 18px
+
+  &__button
+    margin-top: auto
+
+  &__modificator
+    align-self: center
+    margin-left: 10px
+
+    &_hit
+      background:
+        image: url('../assets/modificator-hit.png')
+        repeat: no-repeat
+        size: contain
+      width: 45px
+      height: 45px
+
+    &_new
+      background:
+        image: url('../assets/modificator-new.png')
+        repeat: no-repeat
+        size: contain
+      width: 45px
+      height: 45px
+
+    &_action
+      background:
+        image: url('../assets/modificator-action.png')
+        repeat: no-repeat
+        size: contain
+      width: 70px
+      height: 30px
+
+.top-line-remove
+  height: 1px
+  margin-top: -51px
+  background-color: white
+
+.relative
+  position: relative
+
+.bottom-line
+  border-bottom: 1px solid #f0f0f0
+
+.m-b-50
+  margin-bottom: 50px

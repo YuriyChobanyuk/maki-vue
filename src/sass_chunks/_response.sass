@@ -1,0 +1,110 @@
+.product-img
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  .xzoom
+    box-shadow: none
+  .xzoom-preview 
+    border: 1px solid #888
+    box-shadow: -0px -0px 10px rgba(0,0,0,0.50)
+    background: #ffffff
+  .xzoom-thumbs 
+    display: flex
+    justify-content: space-between
+    margin: 10px 0
+  .xzoom-gallery, .xzoom-gallery2, .xzoom-gallery3, .xzoom-gallery4, .xzoom-gallery5
+    margin: 0
+    border: none
+.comments-block__text
+  display: flex
+  justify-content: space-between
+  font-weight: bold
+  font-size: 15px
+li
+  list-style: none
+.comment
+  display: none
+  &__info
+    display: flex
+    justify-content: space-between
+    margin: 25px 0 12px
+    &-text
+      font-size: 13px
+      span
+        color: #999999
+      p
+        color: #666666
+    &-star
+      display: flex
+      color: #ff7575
+      font-size: 13px
+      padding-top: 20px
+  &__text
+    background-color: #f0f0f0
+    padding: 20px
+    color: #666666
+    font-size: 13px
+    position: relative
+  &__text:before 
+    top: -12px
+    content: url(../img/arrow.png)
+    position: absolute
+    right: 105px
+    display: block
+    width: 0
+    z-index: 0
+#loadMore 
+  color: #999999
+  font-size: 13px
+  transition: all 600ms ease-in-out
+#loadMore:hover 
+  text-decoration: none
+  color: #cbc8c8
+.LoadButton
+  display: flex
+  justify-content: center
+  margin: 20px 0
+.response
+  margin-top: 30px
+  .info
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__title
+    font-size: 15px
+  &__star
+    .stars
+      display: flex
+      .star        
+        font-size: 25px
+        color: #ff7575
+      .star::before
+        content: '\2606'
+        cursor: pointer
+      .star:hover::before
+        content: '\2605'
+        color: #ff7575
+      .star.rated::before
+        content: '\2605'
+
+  &__form
+    margin-bottom: $gutter*2
+    form
+      display: flex
+      justify-content: center
+      flex-direction: column
+      align-items: center
+      width: 100%
+    textarea
+      height: 80px
+      width: 100%
+      resize: none
+    input
+      background-color: #fff
+      font-size: 15px
+      border: 1px solid #999999
+      padding: 15px 25px
+      max-width: 135px
+      margin-top: $gutter
+      text-transform: uppercase
