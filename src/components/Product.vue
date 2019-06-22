@@ -8,7 +8,7 @@
     .product__description {{product.description}}
     .product__price {{product.price}}
   .product__button
-    a(href="#" data-price=rndPrice).hover-order
+    a(@click.prevent='addToCart()' href="#" data-price=rndPrice).hover-order
       |ЗАКАЗАТЬ
 </template>
 
@@ -30,7 +30,9 @@ export default {
   },
   name: 'Product',
   data(){
-    return{}
+    return{
+      animationStyle: 'opacity: 1'
+    }
   },
   methods: {
     classObject: function(label){
@@ -38,7 +40,10 @@ export default {
       classArray.push('product__modificator_' + label);
       return classArray;
     },
-  }
+    addToCart: function(){
+      this.$store.state.cartItems.push(this.product);
+    }
+  },
 }
 </script>
 

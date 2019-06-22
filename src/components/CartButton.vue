@@ -5,18 +5,30 @@
     |КОРЗИНА
   .headertext
     span
-      strong#counter 0
+      strong#counter {{cartItemsL}}
       | товаров
     span
       |
       |на сумму
       |
-      strong#price 0
+      strong#price {{totalPrice}}
       | руб.
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
+  name: 'CartButton',
+  computed: {
+    cartItemsL(){
+      return this.$store.state.cartItems.length;
+    },
+    totalPrice(){
+      var result = 0;
+      this.$store.state.cartItems.forEach(item => result += +item.price)
+      return result;
+    }
+  }
 }
 </script>
 

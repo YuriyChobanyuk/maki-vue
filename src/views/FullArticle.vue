@@ -1,5 +1,6 @@
 <template lang="pug">
 .full-article
+  Breadcrumbs
   MyHeader
   Article(:info='article')
   Footer
@@ -10,12 +11,14 @@ import axios from 'axios';
 import MyHeader from '@/components/MyHeader.vue';
 import Footer from '@/components/Footer.vue';
 import Article from '@/components/Article.vue';
+import Breadcrumbs from '@/components/Breadcrumbs.vue';
 export default {
   name: 'FullArticle',
   components: {
     MyHeader,
     Footer,
-    Article
+    Article,
+    Breadcrumbs
   },
   data(){
     return{

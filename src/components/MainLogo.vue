@@ -1,6 +1,6 @@
 <template lang="pug">
 .main-logo.m-t-30
-  a(href="#")
+  router-link(to='/')
     img(src="../assets/main-logo.png", alt="main-logo")
   span Интернет-магазин цветов
 </template>

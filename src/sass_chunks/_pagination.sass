@@ -5,25 +5,34 @@
     display: inline-block
     font-size: 15px
     margin: 0 2.5px
+    position: relative
+
     &:first-child
-      margin-left: 0    
+      margin-left: 0
     &:last-child
       margin-right: 0
     a
       padding: 11px 16px
       color: #333333
       text-decoration: none
-      transition: background-color .15s
+      transition: .15s
       border: 1px solid #959595
       transition: .15s
       display: inline-block
+
       &:hover
         border-color: #ffa6a6
     span
       cursor: default
-      padding: 11px 16px 
+      padding: 11px 16px
       border: 1px solid transparent
       color: #fff
-      background: linear-gradient(to top, #ff9999 0%,#ffaaaa 100%)
+      position: absolute
+      top: 0
+      left: 0
+      z-index: -1
+
       &.active
-      border-color: #ffa6a6
+        border-color: #ffa6a6
+        background: linear-gradient(to top, #ff9999 0%,#ffaaaa 100%)
+        z-index: 1

@@ -4,7 +4,7 @@
     .row
       .column-phablet-1-2.column-phablet-1-3.m-b-30(v-for='item in news')
         Article(:info='item')
-    Pagination(v-if='paginate', :pagination='{page: page, pages: pages, path: "news"}')
+    Pagination(v-if='paginate', :pagination='{page: page, pages: pages, path: "/news"}')
 </template>
 
 <script>
@@ -41,7 +41,6 @@ export default {
           this.news = res.data.docs;
           this.page = res.data.page;
           this.pages = res.data.totalPages;
-          console.log(res.data);
         }
       )
       .catch(

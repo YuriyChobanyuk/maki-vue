@@ -3,7 +3,8 @@
     #nav
       router-link(to='/') Home
       router-link(to='/about') About
-      router-link(to="/product") Product
+      router-link(to="/products") Product
+      router-link(to='/news') News
     router-view
 </template>
 

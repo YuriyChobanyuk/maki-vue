@@ -1,5 +1,6 @@
 <template lang='pug'>
 .home
+  Breadcrumbs
   MyHeader
   .wrapper
     Catalog(:limit='6', :paginate='true')
@@ -17,13 +18,15 @@ import Catalog from '@/components/Catalog.vue';
 import MyHeader from '@/components/MyHeader.vue';
 import Article from '@/components/Article.vue';
 import Footer from '@/components/Footer.vue';
+import Breadcrumbs from "@/components/Breadcrumbs.vue";
 export default {
   name: 'home',
   components: {
     Catalog,
     MyHeader,
     Article,
-    Footer
+    Footer,
+    Breadcrumbs
   },
   data(){
     return{

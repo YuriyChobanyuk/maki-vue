@@ -5,7 +5,7 @@
       .row.m-b-20
         .column-laptop-1-3.column-tablet-1-2.bottom-line.m-b-50(v-for='prod in products')
           Product(:product='prod')
-  Pagination(v-if='paginate', :pagination='{page: page, pages: pages, path: "/"}')
+  Pagination(v-if='paginate', :pagination='{page: page, pages: pages, path: pagePath}')
 </template>
 
 <script>
@@ -23,7 +23,8 @@ export default {
     return {
       page: 1,
       pages: 0,
-      products: []
+      products: [],
+      pagePath: this.$router.history.current.path
     }
   },
   methods: {
