@@ -21,13 +21,9 @@ export default {
     removeClasses: function(e){
       var headerSearchComponent = document.querySelector('.header-search');
       var headerSearchChildrens = headerSearchComponent.getElementsByTagName('*');
-      var submitButton = document.querySelector('.header-submit-button');
-      var headerSearch = document.querySelector('.header-search-input');
-
       if(e.target != headerSearchComponent && this.checkTarget(headerSearchChildrens, e.target)){
-        headerSearch.classList.remove('search-is-active');
-        submitButton.classList.remove('submit-btn-is-active');
-
+        this.$store.state.headerSearchClassObject.inputClassObject['search-is-active'] = false;
+        this.$store.state.headerSearchClassObject.buttonClassObject['submit-btn-is-active'] = false;
       }
     }
   }

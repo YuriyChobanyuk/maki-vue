@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import Product from './views/Product.vue'
 import FullArticle from './views/FullArticle.vue'
 import NewsPage from './views/NewsPage.vue'
+import Order from './views/Order.vue'
 //import VueBreadcrumbs from 'vue-breadcrumbs'
 
 
@@ -45,6 +46,11 @@ export default new Router({
       path: '/news/:id',
       name: 'news',
       component: FullArticle
+    },
+    {
+      path: '/order',
+      name: 'order',
+      component: Order
     }
   ]
 })

@@ -2,7 +2,7 @@
 .header-search
   form(action="#")
     input(type="search" name="header-search", :class="inputClassObject").header-search-input
-    .header-search-button(@click="searchButtonListen", :class='buttonClassObject')
+    .header-search-button(@click='searchButtonListen' :class='buttonClassObject')
       img(src="../assets/search-button-temp.png" alt='temp-search')
     button(name="header-submit" type="submit" @submit.prevent).header-submit-button
       img(src="../assets/search-button-temp.png" alt='temp-search')
@@ -13,37 +13,19 @@ export default {
   name: 'HeaderSearch',
   props: {
     classObject: {
-      type: Object,
-      default: function(){
-        return {
-          inputClassObject: {
-            'search-is-active': false
-          },
-          buttonClassObject: {
-            'submit-btn-is-active': false
-          }
-        }
-      }
+      type: Object
     }
   },
   data(){
     return{
-      inputClassObject: {
-        'search-is-active': false
-      },
-      buttonClassObject: {
-        'submit-btn-is-active': false
-      }
+      inputClassObject: this.$store.state.headerSearchClassObject.inputClassObject,
+      buttonClassObject: this.$store.state.headerSearchClassObject.buttonClassObject
     }
   },
   methods: {
     searchButtonListen: function(){
-      var headerSearchInput = document.querySelector('.header-search-input');
-      var headerSearchButton = document.querySelector('.header-search-button');
-      headerSearchButton.classList.add('submit-btn-is-active');
-      headerSearchInput.classList.add('search-is-active');
-      // this.inputClassObject['search-is-active'] = true;
-      // this.buttonClassObject['submit-btn-is-active'] = true;
+      this.$store.state.headerSearchClassObject.inputClassObject['search-is-active'] = true;
+      this.$store.state.headerSearchClassObject.buttonClassObject['submit-btn-is-active'] = true;
     }
   }
 }

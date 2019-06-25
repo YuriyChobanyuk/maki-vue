@@ -1,19 +1,34 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import cart from './store/modules/cart'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    cartItems: []
+    headerSearchClassObject: {
+      inputClassObject: {
+        'search-is-active': false
+      },
+      buttonClassObject: {
+        'submit-btn-is-active': false
+      }
+    }
   },
   mutations: {
-    addToCart(item){
-      this.state.cartItems.push(item);
-      this.$store.commit('addToCard', item);
+    setHeaderSearchClass(state, classObj){
+      state.headerSearchClassObject = classObj;
     }
   },
   actions: {
+    changeHeaderSearchClass(store, classObj){
+      store.commit('setHeaderSearchClass', classObj);
+    }
+  },
+  getters: {
 
+  },
+  modules: {
+    cart
   }
 })

@@ -1,10 +1,9 @@
 <template lang="pug">
 .catalog
-  .row
-    .column-laptop-3-4
-      .row.m-b-20
-        .column-laptop-1-3.column-tablet-1-2.bottom-line.m-b-50(v-for='prod in products')
-          Product(:product='prod')
+  .row.m-b-20
+    .column-laptop-1-3.column-tablet-1-2.bottom-line.m-b-50(v-for='prod in products')
+      Product(:product='prod')
+    .column.top-line-remove
   Pagination(v-if='paginate', :pagination='{page: page, pages: pages, path: pagePath}')
 </template>
 
@@ -63,5 +62,18 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="sass" scoped>
+.top-line-remove
+  height: 1px
+  margin-top: -51px
+  background-color: white
+
+.relative
+  position: relative
+
+.bottom-line
+  border-bottom: 1px solid #f0f0f0
+
+.m-b-50
+  margin-bottom: 50px
 </style>

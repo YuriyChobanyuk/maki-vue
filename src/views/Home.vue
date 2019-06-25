@@ -3,7 +3,11 @@
   Breadcrumbs
   MyHeader
   .wrapper
-    Catalog(:limit='6', :paginate='true')
+    .row
+      .column-laptop-3-4
+        Catalog(:limit='6', :paginate='true')
+      .column-laptop-1-4
+        Sidebar
   .wrapper
     .row
       .column-phablet-1-2.column-phablet-1-3.m-b-30(v-for='item in news')
@@ -19,6 +23,7 @@ import MyHeader from '@/components/MyHeader.vue';
 import Article from '@/components/Article.vue';
 import Footer from '@/components/Footer.vue';
 import Breadcrumbs from "@/components/Breadcrumbs.vue";
+import Sidebar from '@/components/Sidebar.vue';
 export default {
   name: 'home',
   components: {
@@ -26,7 +31,8 @@ export default {
     MyHeader,
     Article,
     Footer,
-    Breadcrumbs
+    Breadcrumbs,
+    Sidebar
   },
   data(){
     return{
